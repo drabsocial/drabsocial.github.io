@@ -12,7 +12,7 @@
 let a = document.createElement('a');
 a.href = "drab://authorize" + window.location.search;
 a.innerText = "Return to Drab"
+a.onclick = () => setTimeout(() => window.location = "about:blank", 100);
 document.body.appendChild(a);
-window.onblur = () => window.location = "about:blank";
 </script>
 </html>
