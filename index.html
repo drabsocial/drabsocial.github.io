@@ -13,5 +13,6 @@ let a = document.createElement('a');
 a.href = "drab://authorize" + window.location.search;
 a.innerText = "Return to Drab"
 document.body.appendChild(a);
+window.onblur = () => window.location = "about:blank";
 </script>
 </html>
