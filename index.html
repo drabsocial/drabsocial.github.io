@@ -1,24 +1,24 @@
 <html>
-<head>
-<meta charset="utf-8">
-<meta http-equiv="expires" content="0">
-<meta http-equiv="pragma" content="no-cache">
-<meta http-equiv="cache-control" content="no-cache">
-<script>
-let alt = document.createElement('link');
-alt.setAttribute("rel", "alternate");
-alt.setAttribute("href", "social.drab://authorize/"+window.location.search);
-document.head.appendChild(alt);
-</script>
-</head>
-<body>
-<h2>App authorized</h2>
-</body>
-<script>
-let a = document.createElement('a');
-a.onclick = e => window.location = "social.drab://authorize/" + window.location.search;
-a.href = "#";
-a.innerText = "Return to Drab";
-document.body.appendChild(a);
-</script>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <script>
+      let alt = document.createElement('link');
+      alt.setAttribute("rel", "alternate");
+      alt.setAttribute("href", "social.drab://authorize/"+window.location.search);
+      document.head.appendChild(alt);
+    </script>
+  </head>
+  <body>
+  <h2>App authorized</h2>
+    <script>
+      let a = document.createElement('a');
+      a.onclick = e => window.location = "social.drab://authorize/" + window.location.search;
+      a.href = "#";
+      a.innerText = "Return to Drab";
+      document.body.appendChild(a);
+    </script>
+  </body>
 </html>
