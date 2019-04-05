@@ -4,13 +4,14 @@
 <meta http-equiv="expires" content="0">
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
+<link rel="alternate"href="social.drab://authorize" />
 </head>
 <body>
 <h2>App authorized</h2>
 </body>
 <script>
 let a = document.createElement('a');
-a.href = "social.drab:/authorize" + window.location.search;
+a.href = "social.drab://authorize" + window.location.search;
 a.innerText = "Return to Drab"
 document.body.appendChild(a);
 </script>
