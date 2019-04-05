@@ -11,8 +11,9 @@
 </body>
 <script>
 let a = document.createElement('a');
-a.href = "social.drab://authorize" + window.location.search;
-a.innerText = "Return to Drab"
+a.onclick = e => window.location = "social.drab://authorize/" + window.location.search;
+a.href = "#";
+a.innerText = "Return to Drab";
 document.body.appendChild(a);
 </script>
 </html>
