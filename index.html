@@ -9,6 +9,7 @@
     <h2>App authorized</h2>
     <script>
       document.addEventListener("DOMContentLoaded", e => {
+        let goIntent = "intent://authorize/"+window.location.search+"#Intent;scheme=drab;package=social.drab;end"
         let intent = "drab://authorize/";
         console.log(window.location.search);
         let alt = document.createElement('link');
@@ -17,8 +18,8 @@
         document.head.appendChild(alt);
 
         let a = document.createElement('a');
-        a.addEventListener('click', e => { window.location = intent + window.location.search; });
-        a.href = "#"+window.location.search;
+        //a.addEventListener('click', e => { window.location = goIntent; });
+        a.href = goIntent;
         a.innerText = "Return to Drab";
         document.body.appendChild(a);
       });
