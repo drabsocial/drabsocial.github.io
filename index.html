@@ -31,24 +31,23 @@
   </head>
   <body>
     <h2>App authorized</h2>
+    <a>Return to Drab</a>
     <script>
       document.addEventListener("DOMContentLoaded", e => {
         let intent = "social.drab://authorize" + window.location.search;
-        let a = document.createElement('a');
+        let a = document.querySelector('a');
         a.href = intent;
-        a.innerText = "Return to Drab";
-        a.onclick = e => setTimeout(() => document.querySelector('.hidden').classList.remove('hidden'), 2000);
-        document.body.appendChild(a);
-        let code = document.createElement('pre');
+        a.onclick = e => setTimeout(() => document.querySelector('[hidden]').hidden = false, 2000);
+        let code = document.querySelector('pre');
         code.innerText = window.location.search.substr(1)
           .split("&")
           .filter(s=>s.split("=")[0]=="code")[0]
           .split("=")[1];
-        document.body.lastChild.appendChild(code);
       });
     </script>
-    <div class="hidden">
+    <div hidden>
       <h3>Deeplinks aren't supported on this browser. Please copy the following code and paste it into the app to continue the process.</h3>
+      <pre></pre>
     </div>
   </body>
 </html>
