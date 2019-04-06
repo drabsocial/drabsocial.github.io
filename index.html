@@ -12,42 +12,30 @@
         text-align: center;
         font-size: 5em;
       }
-      a {
+      h3 {
+        
         text-align: center;
-        display: block;
-        font-size: 4em;
-        border: 5px solid green;
-        width: 450px;
-        margin-left: calc(50% - 225px);
-        border-radius: 2em;
-        text-decoration: none;
-        color: gray;
-        background-color: lightgreen;
+        font-size: 3em;
       }
-      pre {
-        user-select: initial;
+      pre>code {
+        user-select: auto;
+        font-size: 2em;
+        margin-top: 100px;
       }
     </style>
   </head>
   <body>
     <h2>App authorized</h2>
-    <a>Return to Drab</a>
+    <h3>Deeplinks aren't supported on this browser. Please copy the following code and paste it into the app to continue the process.</h3>
+    <pre><code></code></pre>
     <script>
       document.addEventListener("DOMContentLoaded", e => {
-        let intent = "social.drab://authorize" + window.location.search;
-        let a = document.querySelector('a');
-        a.href = intent;
-        a.onclick = e => setTimeout(() => document.querySelector('[hidden]').hidden = false, 2000);
-        let code = document.querySelector('pre');
+        let code = document.querySelector('pre>code');
         code.innerText = window.location.search.substr(1)
           .split("&")
           .filter(s=>s.split("=")[0]=="code")[0]
           .split("=")[1];
       });
     </script>
-    <div hidden>
-      <h3>Deeplinks aren't supported on this browser. Please copy the following code and paste it into the app to continue the process.</h3>
-      <pre></pre>
-    </div>
   </body>
 </html>
