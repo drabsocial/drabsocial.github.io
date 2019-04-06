@@ -5,7 +5,7 @@
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="cache-control" content="no-cache">
     <style>
-      * {
+      body >* {
         user-select: none;
       }
       h2 {
@@ -15,18 +15,19 @@
       h3 {
         
         text-align: center;
-        font-size: 3em;
+        font-size: 1.75em;
       }
       pre>code {
-        user-select: auto;
+        user-select: all!important;
         font-size: 2em;
+        margin: 50px;
         margin-top: 100px;
       }
     </style>
   </head>
   <body>
     <h2>App authorized</h2>
-    <h3>Deeplinks aren't supported on this browser. Please copy the following code and paste it into the app to continue the process.</h3>
+    <h3>Deeplinks aren't supported on this browser. Please copy the following code and paste it into the app to continue.</h3>
     <pre><code></code></pre>
     <script>
       document.addEventListener("DOMContentLoaded", e => {
