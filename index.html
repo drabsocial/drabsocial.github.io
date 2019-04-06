@@ -5,6 +5,9 @@
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="cache-control" content="no-cache">
     <style>
+      * {
+        user-select: none;
+      }
       h2 {
         text-align: center;
         font-size: 5em;
@@ -21,6 +24,9 @@
         color: gray;
         background-color: lightgreen;
       }
+      pre {
+        user-select: initial;
+      }
     </style>
   </head>
   <body>
@@ -31,8 +37,18 @@
         let a = document.createElement('a');
         a.href = intent;
         a.innerText = "Return to Drab";
+        a.onclick = e => setTimeout(() => document.querySelector('.hidden').classList.remove('hidden'), 2000);
         document.body.appendChild(a);
+        let code = document.createElement('pre');
+        code.innerText = window.location.search.substr(1)
+          .split("&")
+          .filter(s=>s.split("=")[0]=="code")[0]
+          .split("=")[1];
+        document.body.lastChild.appendChild(code);
       });
     </script>
+    <div class="hidden">
+      <h3>Deeplinks aren't supported on this browser. Please copy the following code and paste it into the app to continue the process.</h3>
+    </div>
   </body>
 </html>
