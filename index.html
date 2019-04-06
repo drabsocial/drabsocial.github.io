@@ -9,14 +9,15 @@
     <h2>App authorized</h2>
     <script>
       document.addEventListener("DOMContentLoaded", e => {
+        let intent = "drab://authorize/";
         console.log(window.location.search);
         let alt = document.createElement('link');
         alt.setAttribute("rel", "alternate");
-        alt.setAttribute("href", "social.drab://authorize/"+window.location.search);
+        alt.setAttribute("href", intent + window.location.search);
         document.head.appendChild(alt);
 
         let a = document.createElement('a');
-        a.addEventListener('click', e => { window.location = "social.drab://authorize/" + window.location.search; });
+        a.addEventListener('click', e => { window.location = intent + window.location.search; });
         a.href = "#"+window.location.search;
         a.innerText = "Return to Drab";
         document.body.appendChild(a);
